@@ -1,191 +1,88 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Highcharts Example</title>
 
-		<style type="text/css">
-#container {
-    height: 400px; 
-    min-width: 310px; 
-    max-width: 800px;
-    margin: 0 auto;
-}
-		</style>
-	</head>
-	<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tour A-Frame</title>
 
-<script src="../../code/highcharts.js"></script>
-<script src="../../code/highcharts-3d.js"></script>
+<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+<!-- script src="https://pachecod.github.io/aframe-master/dist/aframe-master.js"></script -->
 
-<div id="container"></div>
+</head>
 
+<body>
 
-		<script type="text/javascript">
-Highcharts.chart('container', {
-    chart: {
-        type: 'area',
-        options3d: {
-            enabled: true,
-            alpha: 15,
-            beta: 30,
-            depth: 200
-        }
+<a-scene inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="" device-orientation-permission-ui="">
+
+<!-- canvas class="a-canvas a-grab-cursor" data-aframe-canvas="true" width="801" height="937" style=""></canvas -->
+
+<a-entity camera="" position="" wasd-controls="" rotation="" look-controls="" aframe-injected=""></a-entity>
+
+<div class="a-enter-vr" aframe-injected=""><button class="a-enter-vr-button" title="Enter VR mode with a headset or fullscreen mode on a desktop. Visit https://webvr.rocks or https://webvr.info for more information." aframe-injected=""></button></div>
+
+<div class="a-enter-ar a-hidden" aframe-injected=""><button class="a-enter-ar-button" title="Enter AR mode with a headset or handheld device. Visit https://webvr.rocks or https://webvr.info for more information." aframe-injected=""></button></div>
+
+<div class="a-orientation-modal a-hidden" aframe-injected=""><button aframe-injected="">Exit VR</button></div>
+
+<a-entity light="" data-aframe-default-light="" aframe-injected=""></a-entity>
+
+<a-entity light="" position="" data-aframe-default-light="" aframe-injected=""></a-entity>
+
+<a-entity cursor="rayOrigin:mouse"></a-entity>
+
+<script>
+  AFRAME.registerComponent("weblink", {
+    schema: {
+      url: {
+        default: ""
+      }
     },
-    title: {
-        text: "Visual comparison of Mountains Panorama"
-    },
-    yAxis: {
-        title: {
-            text: 'Height Above Sea Level',
-            x: -40
-        },
-        labels: {
-            format: '{value:,.0f} MAMSL'
-        },
-        gridLineDashStyle: 'Dash'
-    },
-    xAxis: [{
-        visible: false
-    }, {
-        visible: false
-    }, {
-        visible: false
-    }],
-    plotOptions: {
-        area: {
-            depth: 100,
-            marker: {
-                enabled: false
-            },
-            states: {
-                inactive: {
-                    enabled: false
-                }
-            }
-        }
-    },
-    tooltip: {
-        valueSuffix: ' MAMSL'
-    },
-    series: [{
-        name: "Tatra Mountains visible from Rusinowa polana",
-        lineColor: 'rgb(180,90,50)',
-        color: 'rgb(200,110,50)',
-        fillColor: 'rgb(200,110,50)',
-        data: [
-            ['Murań', 1890],
-            ['Nowy Wierch', 2009],
-            ['Hawrań', 2152],
-            ['Płaczliwa Skała', 2142],
-            ['Szalony Wierch', 2061],
-            ['Karczmarski Wierch', 1438],
-            ['Jagnięcy Szczyt', 2230],
-            ['Czerwona Turnia', 2284],
-            ['Kołowy Szczyt', 2418],
-            ['Czarny Szczyt', 2429],
-            ['Baranie Rogi', 2526],
-            ['Śnieżny Szczyt', 2465],
-            ['Lodowy Szczyt', 2627],
-            ['Lodowa Kopa', 2602],
-            ['Szeroka Jaworzyńska', 2210],
-            ['Horwacki Wierch', 1902],
-            ['Spismichałowa Czuba', 2012],
-            ['Zielona Czuba', 2130],
-            ['Wielicki Szczyt', 2318],
-            ['Gerlach', 2655],
-            ['Batyżowiecki Szczyt', 2448],
-            ['Kaczy Szczyt', 2395],
-            ['Zmarzły Szczyt', 2390],
-            ['Kończysta', 2538],
-            ['Młynarz', 2170],
-            ['Ganek', 2462],
-            ['Wysoka', 2547],
-            ['Ciężki Szczyt', 2520],
-            ['Rysy', 2503],
-            ['Żabi Mnich', 2146],
-            ['Żabi Koń', 2291],
-            ['Żabia Turnia Mięguszowiecka', 2335],
-            ['Wołowa Turnia', 2373]
-        ]
-    }, {
-        xAxis: 1,
-        lineColor: 'rgb(120,160,180)',
-        color: 'rgb(140,180,200)',
-        fillColor: 'rgb(140,180,200)',
-        name: "Dachstein panorama seen from Krippenstein",
-        data: [
-            ['Kufstein', 2049],
-            ['Hohe Wildstelle', 2746],
-            ['Kleiner Miesberg', 2173],
-            ['Großer Miesberg', 2202],
-            ['Hochstein', 2543],
-            ['Lackner Miesberg', 2232],
-            ['Wasenspitze', 2257],
-            ['Sinabell', 2349],
-            ['Feister Scharte', 2198],
-            ['Eselstein', 2556],
-            ['Landfriedstein', 2536],
-            ['Scheichenspitz', 2667],
-            ['Schmiedstock', 2634],
-            ['Gamsfeldspitze', 2611],
-            ['Edelgriess', 2305],
-            ['Koppenkarstein', 2863],
-            ['Niederer Gjaidstein', 2483],
-            ['Hoher Gjaidstein', 2794],
-            ['Hoher Dachstein', 2995],
-            ['Niederer Dachstein', 2934],
-            ['Hohes Kreuz', 2837],
-            ['Hoher Ochsenkogel', 2513]
-        ]
-    }, {
-        xAxis: 2,
-        lineColor: 'rgb(200, 190, 140)',
-        color: 'rgb(200, 190, 140)',
-        fillColor: 'rgb(230, 220, 180)',
-        name: "Panorama from Col Des Mines",
-        data: [
-            ['Combin de la Tsessette', 4141],
-            ['Grand Combin de Grafeneire', 4314],
-            ['Combin de Corbassière', 3716],
-            ['Petit Combin', 3672],
-            ['Pointe de Boveire', 3212],
-            ['Grand Aget', 3133],
-            ['Mont Rogneux', 3084],
-            ['Dents du Grand Lé', 2884],
-            ['Monts Telliers', 2951],
-            ['Grand Golliat', 3238],
-            ['Mont Grande Rochère', 3326],
-            ['Mont de la Fouly', 2871],
-            ['Tête de la Payanne', 2452],
-            ['Pointe Allobrogia', 3172],
-            ['Six Blanc', 2334],
-            ['Mont Dolent', 3820],
-            ['Aiguille de Triolet', 3870],
-            ['Le Tour Noir', 3836],
-            ["Aiguille de l'A Neuve", 3753],
-            ["Aiguille d'Argentière", 3900],
-            ["Aiguille du Chardonnet", 3824],
-            ["Aiguille du Tour", 3540],
-            ["Aiguille du Pissoir", 3440],
-            ["Le Catogne", 2598],
-            ["Pointe de Prosom", 2762],
-            ["Pointe Ronde", 2700],
-            ["Mont Buet", 3096],
-            ["Le Cheval Blanc", 2831],
-            ["Pointe de la Finive", 2838],
-            ["Pic de Tenneverge", 2985],
-            ["Pointe d'Aboillon", 2819],
-            ["Tour Sallière", 3220],
-            ["Le Dôme", 3138],
-            ["Haute Cime", 3257],
-            ["Pierre Avoi", 2473],
-            ["Cime de l'Est", 3178]
-        ]
-    }]
-});
+    init: function() {
+      this.el.addEventListener("click", (e) => {
+        window.location = this.data.url;
+      })
+    }
+  })
+</script>
 
-		</script>
-	</body>
+<!-- Change position, text and weblink for each hotspot and photo. !-->
+<!-- Duplicate a snippet below for additional hotspots, then customize them. -->
+<!-- -->
+<!-- BLOCK PLACEMENT -->
+<!-- X is right positive, left negative  -->
+<!-- Y is up negative, down negative  -->
+<!-- Z is toward you positive, away from you negative  -->
+<!-- -->
+<!-- BLOCK ROTATION-->
+<!-- X is tumbles toward or away from you.  -->
+<!-- Y spins like a top.  -->
+<!-- Z spins like a fan with blades facing you -->
+<!-- -->
+
+<a-box position="10 0 -60" rotation="0 0 0" width="20" height="10" color="orange" weblink="url:photo3.html">
+<a-text font="kelsonsans" value="Check this out" width="50" position="-6 0 0.8" rotation="0 0 0"></a-text>
+</a-box>
+
+<a-box position="40 0 -15" rotation="0 270 0" width="20" height="10" color="green" weblink="url:photo3.html">
+  <a-text font="kelsonsans" value="Go this way" width="50" position="-6 0 0.8" rotation="0 0 0"></a-text>
+</a-box>
+
+<a-box position="70 0 30" rotation="0 270 0" width="20" height="10" color="blue" weblink="url:photo3.html">
+  <a-text font="kelsonsans" value="Ovah here" width="50" position="-6 0 0.8" rotation="0 0 0"></a-text>
+</a-box>
+
+
+
+<!-- ....................... -->
+
+<!-- Change 360 photo to your own below. -->
+<a-sky src="https://cdn.glitch.com/5575c041-4c40-4ed5-bf9a-0f63a4eebb57%2FBala360.jpg?v=1620784082779" rotation="0 -130 0"></a-sky>
+<!-- ....................... -->
+
+</a-scene>
+
+
+</body>
 </html>
