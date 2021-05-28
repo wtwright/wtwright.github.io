@@ -1,18 +1,15 @@
-
-<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>360&deg; Image</title>
-    <meta name="description" content="360&deg; Image - A-Frame">
-    <script src="../../../dist/aframe-master.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Landbot | Convert a Landing Page into a Chatbot</title>
   </head>
   <body>
-    <a-scene>
-      <a-sky src="puydesancy.jpg" rotation="0 -130 0"></a-sky>
-
-      <a-text font="kelsonsans" value="Puy de Sancy, France" width="6" position="-2.5 0.25 -1.5"
-              rotation="0 15 0"></a-text>
-    </a-scene>
+    <script SameSite="None; Secure" src="https://static.landbot.io/landbot-3/landbot-3.0.0.js"></script>
+    <script>
+      var myLandbot = new Landbot.Fullpage({
+        configUrl: 'https://chats.landbot.io/v3/H-914426-T1G7O2BO75HSV22G/index.json',
+      });
+    </script>
   </body>
 </html>
